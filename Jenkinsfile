@@ -5,19 +5,19 @@ pipeline{
 	stages{
 		stage ("build"){
 			steps{
-				echo "Building the Application"
+				echo "Building the Java Application"
 			}
 		}
 		
 		stage ("test"){
 			steps {
-				echo "Testing the Application"
+				echo "Testing the Java Application"
 			}
 		}
 		
 		stage ("deploy"){
 			steps {
-				echo "Deploying the Application"
+				echo "Deploying the Java Application"
 			}
 		}
 	}
