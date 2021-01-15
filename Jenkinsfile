@@ -7,20 +7,20 @@ pipeline{
 	}
 	
 	stages{
-		stage ("build"){
+		stage ("Nebu"){
 			steps{
 				echo "Building the Java Application"
 				sh "gradle -v"
 			}
 		}
 		
-		stage ("test"){
+		stage ("Molu"){
 			steps {
 				echo "Testing the Java Application"
 			}
 		}
 		
-		stage ("deploy"){
+		stage ("Vava"){
 			steps {
 				echo "Deploying the Java Application"
 			}
