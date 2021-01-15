@@ -26,4 +26,15 @@ pipeline{
 			}
 		}
 	}
+	post {
+		always {
+			echo "POST - ALL STAGES ARE OVER"					   
+		}
+		success {
+			echo "POST - Build was successful, Sending Success Mails"
+		}
+		failure {
+			echo "POST - Build has failed, Sending Failure Mails"
+		}
+	}
 }  
