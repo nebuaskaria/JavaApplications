@@ -10,7 +10,7 @@ pipeline{
 		stage ("build"){
 			steps{
 				echo "Building the Java Application"
-				sh "./gradlew -v"
+				sh ".\gradlew -v"
 			}
 		}
 		
