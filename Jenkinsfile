@@ -3,7 +3,7 @@ pipeline{
 	agent any
 	
 	tools {
-		Gradle "Gradle 6.8"
+		Gradle "Gradle-6.8"
 	}
 	
 	stages{
