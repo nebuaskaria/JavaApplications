@@ -2,7 +2,7 @@ pipeline{
 
 	agent any
 	environment {
-		APP_VERSION = 1.0.0
+		APP_VERSION = "1.0.0"
 		GIT_CREDENTIALS = credentials("git_credentials")
 	}
 	tools {
