@@ -19,7 +19,7 @@ pipeline{
 			steps {				
 				echo "Building the Java Application version : ${APP_VERSION}"
 				withCredentials([
-					usernamePassword(credentials: "git_credentials", 
+					usernamePassword(credentialsId: "git_credentials", 
 							 usernameVariable: "USER", 
 							 passwordVariable: "PWD")]){
 					echo "Git Credential ${USER} and ${PWD}"
