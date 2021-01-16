@@ -20,8 +20,8 @@ pipeline{
 				echo "Building the Java Application version : ${APP_VERSION}"
 				withCredentials([
 					usernamePassword(credentials: "git_credentials", 
-							 usernameVariable: USER, 
-							 passwordVariable: PWD)]){
+							 usernameVariable: "USER", 
+							 passwordVariable: "PWD")]){
 					echo "Git Credential ${USER} and ${PWD}"
 				}
 				sh "gradle -v"
