@@ -11,9 +11,9 @@ pipeline{
 	
 	stages{
 		stage ("build"){
-			steps{
-				when{
-					expression{
+			steps {
+				when {
+					expression {
 						BRANCH_NAME == "master"
 					}
 				}
