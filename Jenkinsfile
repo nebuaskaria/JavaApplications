@@ -1,7 +1,10 @@
 pipeline{
 
 	agent any
-	
+	environment {
+		APP_VERSION = 1.0.0
+		GIT_CREDENTIALS = credentials("git_credentials")
+	}
 	tools {
 		gradle "Gradle-6.8"
 	}
@@ -9,7 +12,19 @@ pipeline{
 	stages{
 		stage ("build"){
 			steps{
-				echo "Building the Java Application"
+				when{
+					expression{
+						BRANCH_NAME = "master"
+					}
+				}
+				echo "Building the Java Application version : ${APP_VERSION}"
+				withCredentials([
+					usernamePassword(credentials: git_credentials, 
+					usernameVariable: USER_NAME;
+					passwordVariable: PASSWORD)
+				]){
+					echo "Git Credential ${USER_NAME} and ${PASSWORD}"
+				}
 				sh "gradle -v"
 			}
 		}
