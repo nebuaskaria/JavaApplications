@@ -14,7 +14,7 @@ pipeline{
 			steps{
 				when{
 					expression{
-						BRANCH_NAME = "master"
+						BRANCH_NAME == "master"
 					}
 				}
 				echo "Building the Java Application version : ${APP_VERSION}"
