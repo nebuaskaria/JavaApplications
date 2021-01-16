@@ -11,12 +11,12 @@ pipeline{
 	
 	stages{
 		stage ("build"){
-			steps {
-				when {
-					expression {
-						BRANCH_NAME == "master"
-					}
+			when {
+		  	 	expression {
+					BRANCH_NAME == "master"
 				}
+			}
+			steps {				
 				echo "Building the Java Application version : ${APP_VERSION}"
 				withCredentials([usernamePassword(credentials: "git_credentials", usernameVariable: USER_NAME, passwordVariable: PASSWORD)]){
 					echo "Git Credential ${USER_NAME} and ${PASSWORD}"
