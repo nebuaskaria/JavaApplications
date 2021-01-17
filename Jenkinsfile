@@ -40,6 +40,7 @@ pipeline{
 				}
 				sh "gradle -v"
 				
+				//To make the Jenkinsfile Clean and Simple
 				script{
 					gv.buildAppWithScript()
 				}				
