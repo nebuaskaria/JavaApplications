@@ -55,6 +55,11 @@ pipeline{
 			}
 			steps {
 				echo "Testing the Java Application: Condition is : ${params.executeTests}"
+				
+				//Groovy Script can access the environmental variables of Jenkins
+				script {
+					gv.testAppWithScript()
+				}
 			}
 		}
 		
