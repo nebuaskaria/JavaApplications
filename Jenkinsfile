@@ -10,7 +10,7 @@ pipeline{
 	}
 	parameters {
 		string (name: "VERSION", defaultValue: "1.0.0", description: "Version_String")
-		choice (name: "VERSIONS, choices: ["1.0.1", "1.0.2", "1.0.3"], description: "Version_Choice")
+		choice (name: "VERSIONS", choices: ["1.0.1", "1.0.2", "1.0.3"], description: "Version_Choice")
 		booleanParam (name: "executeTests", defaultValue: "true", description: "executeTests")
 	}
 	
