@@ -1,3 +1,5 @@
+def gv
+
 pipeline{
 
 	agent any
@@ -15,6 +17,13 @@ pipeline{
 	}
 	
 	stages{
+		stage ("init"){
+			steps{
+				script{
+					gv = load "script.groovy"
+				}
+			}
+		}
 		stage ("build"){
 			when {
 		  	 	expression {
@@ -30,6 +39,10 @@ pipeline{
 					echo "Git Credential ${USER_NAME} and ${PASSWORD}"
 				}
 				sh "gradle -v"
+				
+				script{
+					gv.buildAppWithScript()
+				}				
 			}
 		}
 		

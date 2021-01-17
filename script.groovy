@@ -1,0 +1,1 @@
+def buildAppWithScript(){	echo "Building the application with Groovy Script"}return this
