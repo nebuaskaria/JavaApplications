@@ -8,6 +8,11 @@ pipeline{
 	tools {
 		gradle "Gradle-6.8"
 	}
+	parameters {
+		string (name: "VERSION", defaultValue: "1.0.0", description: "Version_String")
+		choice (name: "VERSIONS, choices: ["1.0.1", "1.0.2", "1.0.3"], description: "Version_Choice")
+		booleanParam (name: "executeTests", defaultValue: "true", description: "executeTests")
+	}
 	
 	stages{
 		stage ("build"){
@@ -29,8 +34,13 @@ pipeline{
 		}
 		
 		stage ("test"){
+			when {
+				expression {
+					params.executeTests
+				}			
+			}
 			steps {
-				echo "Testing the Java Application"
+				echo "Testing the Java Application: Condition is : ${params.executeTests}"
 			}
 		}
 		
