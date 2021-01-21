@@ -21,6 +21,7 @@ pipeline{
 			steps{
 				script{
 					gv = load "script.groovy"
+					git "https://github.com/nebuaskaria/JavaApplications.git"
 				}
 			}
 		}
